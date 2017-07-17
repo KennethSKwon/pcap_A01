@@ -1,14 +1,11 @@
 #include <stdio.h>
 #include <pcap.h>
-#include <stdlib.h>
-#include <arpa/inet.h>
 
 struct _eth_set{
 	unsigned char dst_eth_addr[6];
 	unsigned char src_eth_addr[6];
 	unsigned short eth_type;
-};// __attribute__((packed));     
-// __attribute__((packed))  is advised by teammates
+};
 
 struct _ip_set{
 	unsigned char ip_version:4;
@@ -23,8 +20,8 @@ struct _ip_set{
 	unsigned char ip_cksum[2];
 	unsigned char ip_src_addr[4];
 	unsigned char ip_dst_addr[4];
-};//__attribute__((packed));
-//
+};
+
 struct _tcp_set{
 	unsigned char tcp_src_port[2];
 	unsigned char tcp_dst_port[2];
@@ -36,7 +33,7 @@ struct _tcp_set{
 	unsigned char window_s[2];
 	unsigned char tcp_cksum[2];
 	unsigned char urgent_pt[2];
-};//__attribute__((packed));
+};
 
 int main(int argc, char *argv[]){
 	printf("*START*");
